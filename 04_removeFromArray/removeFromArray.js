@@ -1,8 +1,10 @@
-const removeFromArray = function(array, ele1, ele2) {
-    for (let i = 0; i < array.length; i++) {
-        if ((array[i] === ele1) || (array[i] === ele2)) {
-            array.splice(i, 1);
-        }        
+const removeFromArray = function(array, ...ele) {
+    for (let j = 0; j < ele.length; j++) {
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] === ele[j]) {
+                array.splice(i, 1);
+            }  
+        }
     }
     return array;
 };
